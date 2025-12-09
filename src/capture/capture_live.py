@@ -154,7 +154,7 @@ def main():
                 rec["anomaly_score"] = float(score)
                 rec["label"] = label
 
-                # Dodajemy timestamp
+    
                 rec["timestamp"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
                 try:
