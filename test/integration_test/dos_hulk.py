@@ -9,9 +9,9 @@ TARGET_IP = "127.0.0.1"
 TARGET_PORT = 80
 
 # Parametry na wzór CICIDS2018 DoS Hulk
-PACKET_BURSTS = 40        # duża ilość flow
-BURST_SIZE = 1500          # liczba pakietów w jednym flow
-DELAY = 0.0003            # prawie zero przerw -> typowe dla DoS Hulk
+PACKET_BURSTS = 40       
+BURST_SIZE = 1500         
+DELAY = 0.0003    
 
 
 def generate_hulk_like_attack():
@@ -19,7 +19,7 @@ def generate_hulk_like_attack():
 
     for burst in range(PACKET_BURSTS):
 
-        src_port = random.randint(1024, 65535)  # dynamiczny port - jak w Hulk
+        src_port = random.randint(1024, 65535) 
         uri = f"/test/{random.randint(1,999999)}"
         user_agent = random.choice([
             "Mozilla/5.0",
@@ -49,9 +49,7 @@ def generate_hulk_like_attack():
 
         print(f"[+] Burst {burst+1}/{PACKET_BURSTS} sent.")
 
-    print("\n[✓] Attack simulation complete!")
-    print("Your IDS should classify these flows as 'attack'.\n")
-
+    print("\nAttack simulation complete!")
 
 if __name__ == "__main__":
     generate_hulk_like_attack()
