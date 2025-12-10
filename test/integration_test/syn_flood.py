@@ -23,7 +23,7 @@ def syn_flood():
         send(pkt, verbose=0)
         time.sleep(1 / RATE)
 
-    print("[✓] SYN flood complete.")
+    print("SYN flood complete.")
 
 
 if __name__ == "__main__":
