@@ -22,7 +22,7 @@ def udp_flood():
         send(pkt, verbose=0)
         time.sleep(1 / RATE)
 
-    print("[✓] UDP flood complete.")
+    print("UDP flood complete.")
 
 
 if __name__ == "__main__":
