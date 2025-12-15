@@ -6,7 +6,7 @@ import random
 import os
 
 TARGET_IP = "127.0.0.1"
-TARGET_PORT = 4444  # typowe porty C&C
+TARGET_PORT = 4444 
 
 def botnet_ares():
     print("[*] Starting CICIDS2018-style Botnet ARES simulation...")
@@ -22,7 +22,6 @@ def botnet_ares():
 
         time.sleep(random.uniform(0.3, 1.2))
 
-        # C2 payload (też krótki)
         c2 = IP(dst=TARGET_IP)/TCP(sport=sport, dport=TARGET_PORT, flags="PA")/Raw(
             load=b"cmd:" + os.urandom(random.randint(20, 80))
         )
@@ -31,7 +30,6 @@ def botnet_ares():
 
         # random sleep imitujący nieregularny ruch botnetu
         time.sleep(random.uniform(0.5, 2.0))
-
 
 if __name__ == "__main__":
     botnet_ares()
